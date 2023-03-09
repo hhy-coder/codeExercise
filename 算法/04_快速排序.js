@@ -1,13 +1,15 @@
   //快速排序经典写法
   function quikSort(arr,l,r) {
-    //子数组长度为1时终止递归
+    //如果左边的索引比右边的大，说明区间已经没有数据，退出函数
     if(l>=r){
       return 
     }
     console.log(l,r)
-    //哨兵划分
+    //取出基准数
     let pivot = arr[l]
+    // 定义两个指针
     let left = l,right = r
+    // 开始排序
     while(left<right){
       // 从右往左 找到第一个小于pivot的数  从左到右找到第一个大于pivot的数
       while(arr[right] >= pivot && left<right) right--
@@ -18,7 +20,7 @@
         arr[right] = temp
       }
     }
-    //将pivot换到中间
+    //将pivot换到最终的位置上
   let value = arr[left]
     arr[left] = arr[l]
     arr[l] = value
